@@ -1,269 +1,116 @@
-* {
+/* --- CONFIGURACIÓN GENERAL --- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
+  background-color: #f9f9f9;
   color: #333;
 }
 
-header {
-  text-align: center;
-  padding: 40px 20px;
-  background: white;
-}
-
-.logo {
-  width: 180px;
-  margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-.slogan {
-  color: #00bcd4;
-  font-size: 20px;
-  margin-top: 10px;
-}
-
-.btn-principal {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #00bcd4;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-}
-
-/* Fijar el nav arriba en la pantalla */
-nav {
-  background: #2196f3;
-  padding: 15px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
 section {
-  padding: 50px 20px;
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-.cards {
+h2, h3 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* --- CONTENEDOR EN REJILLA PARA TARJETAS --- */
+.conjuntos-container, 
+.extras-container,
+.juegos-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: stretch; /* Mantiene todas las tarjetas de la misma altura */
   gap: 25px;
 }
 
+/* --- ESTILO DE CADA TARJETA (CARD) --- */
 .card {
-  background: white;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
   width: 320px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- IMÁGENES DENTRO DE LAS TARJETAS --- */
 .card img {
   width: 100%;
-  height: 250px; /* Reducido ligeramente para evitar tarjetas excesivamente largas */
-  object-fit: cover;
+  height: 220px;
+  object-fit: cover; /* Evita que la imagen se deforme */
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
-.card h3 {
-  padding: 15px 15px 10px 15px;
-}
-
-.card p {
-  padding: 0 15px;
-}
-
-/* Estilos específicos para precios generales y precios de detalles */
-.precio {
-  font-size: 24px;
-  font-weight: bold;
-  color: #4caf50;
-  padding: 10px 15px;
-}
-
-.card span.precio {
-  font-size: 18px;
-  display: inline-block;
-  padding: 4px 0 0 0;
-}
-
-button {
-  margin: 15px auto 20px auto;
-  padding: 12px 20px;
-  border: none;
-  background: #ff9800;
+/* --- BOTONES DE COTIZACIÓN --- */
+.card button, .btn-pago, .btn-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: #f39c12;
   color: white;
-  cursor: pointer;
+  border: none;
   border-radius: 8px;
   font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.2s;
 }
 
-form {
-  max-width: 600px;
-  margin: auto;
+.card button:hover {
+  background-color: #d68910;
+}
+
+/* --- FORMULARIO DE RESERVA --- */
+#reservas form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
 }
 
-input,
-textarea {
+#reservas input, 
+#reservas textarea {
+  width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 8px;
-  font-family: inherit;
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 
-textarea {
-  height: 120px;
-}
-
-.abono {
-  background: #fff7d6;
+/* --- SECCIÓN ABONO Y CONTACTO --- */
+.abono, #contacto {
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  margin-top: 30px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .btn-pago {
   display: inline-block;
-  padding: 15px 30px;
-  background: #009ee3;
-  color: white;
+  max-width: 250px;
+  background-color: #009ee3; /* Color Mercado Pago */
   text-decoration: none;
-  border-radius: 10px;
-  font-size: 20px;
-  margin-top: 15px;
-}
-
-footer {
-  background: #222;
-  color: white;
   text-align: center;
-  padding: 25px;
-}
-
-.whatsapp {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 65px;
-  height: 65px;
-  background: #25d366;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 65px;
-  font-size: 32px;
-  text-decoration: none;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 1001;
-}
-
-/* Complementos */
-
-#extras {
-  padding: 40px 20px;
-  background: #fff8f2;
-  text-align: center;
-}
-
-#extras h2 {
-  margin-bottom: 30px;
-}
-
-#extras .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch; /* Alinea todas las tarjetas a la misma altura en escritorio */
-  gap: 20px;
-}
-
-#extras .card {
-  width: 320px;
-  padding-bottom: 20px;
-}
-
-/* Responsive para celulares */
-
-@media (max-width: 768px) {
-  .logo {
-    width: 120px;
-  }
-
-  h1 {
-    font-size: 30px;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  nav a {
-    margin: 5px 0;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .card img {
-    width: 100%;
-    height: auto; /* Permite que la imagen tome su alto natural sin recortar */
-    max-height: 400px; /* Opcional: evita que una imagen sea exageradamente gigante */
-    object-fit: contain; /* Muestra la imagen entera sin recortar bordes */
-    background-color: #fff;/* color de fondo por si hay espacios libres alrededor */
-    display: block;
-  }
-
-  .btn-principal,
-  .btn-pago,
-  button {
-    width: 90%;
-    max-width: 300px;
-  }
-
-  .whatsapp {
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-    font-size: 28px;
-  }
-  /* Ajuste para alinear botones y promociones en las tarjetas */
-.card {
-  display: flex;
-  flex-direction: column;
-}
-
-.card button {
-  margin-top: auto;
-  margin-bottom: 20px;
-}
 }
