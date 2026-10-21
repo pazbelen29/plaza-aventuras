@@ -13,23 +13,29 @@ section {
   padding: 40px 20px;
 }
 
-h2, h3 {
+h2 {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  color: #2c3e50;
 }
 
-/* --- CONTENEDOR EN REJILLA PARA TARJETAS --- */
-.conjuntos-container, 
-.extras-container,
+#inicio {
+  text-align: center;
+  background: #ffffff;
+  padding: 50px 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* --- REJILLA FLEXIBLE DE TARJETAS (CARDS) --- */
 .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch; /* Mantiene todas las tarjetas de la misma altura */
+  align-items: stretch; /* Obliga a que todas las tarjetas tengan la misma altura */
   gap: 25px;
 }
 
-/* --- ESTILO DE CADA TARJETA (CARD) --- */
+/* --- ESTILO DE TARJETAS --- */
 .card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -38,27 +44,43 @@ h2, h3 {
   width: 320px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* Distribuye el contenido y empuja el botón abajo */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* --- IMÁGENES DENTRO DE LAS TARJETAS --- */
+/* --- CONTROL DEL TAMAÑO DE IMÁGENES --- */
 .card img {
   width: 100%;
-  height: 220px;
-  object-fit: cover; /* Evita que la imagen se deforme */
+  height: 200px; /* Tamaño fijo para que ninguna tarjeta se estire excesivamente */
+  object-fit: cover; /* Recorta la foto proporcionalmente sin deformarla */
   border-radius: 8px;
   margin-bottom: 15px;
 }
 
-/* --- BOTONES DE COTIZACIÓN --- */
-.card button, .btn-pago, .btn-submit {
+.card h3 {
+  text-align: center;
+  margin: 10px 0;
+  color: #34495e;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #555;
+  margin: 8px 0;
+  text-align: center;
+}
+
+.precio {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #27ae60;
+  text-align: center;
+}
+
+/* --- BOTONES Y ENLACES DE ACCIÓN --- */
+.card button, #reservas button, .btn-pago {
   width: 100%;
   padding: 12px;
   background-color: #f39c12;
@@ -69,9 +91,13 @@ h2, h3 {
   cursor: pointer;
   margin-top: 15px;
   transition: background-color 0.2s;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  display: inline-block;
 }
 
-.card button:hover {
+.card button:hover, #reservas button:hover {
   background-color: #d68910;
 }
 
@@ -95,22 +121,32 @@ h2, h3 {
   border: 1px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;
+  font-family: inherit;
 }
 
-/* --- SECCIÓN ABONO Y CONTACTO --- */
+/* --- SECCIONES DE ABONO Y CONTACTO --- */
 .abono, #contacto {
   text-align: center;
   background: white;
   border-radius: 12px;
-  margin-top: 30px;
+  max-width: 600px;
+  margin: 30px auto;
   padding: 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .btn-pago {
-  display: inline-block;
+  background-color: #009ee3;
   max-width: 250px;
-  background-color: #009ee3; /* Color Mercado Pago */
+  margin: 15px auto 0 auto;
+}
+
+.btn-pago:hover {
+  background-color: #0082bc;
+}
+
+#contacto a {
+  color: #e1306c;
   text-decoration: none;
-  text-align: center;
+  font-weight: bold;
 }
