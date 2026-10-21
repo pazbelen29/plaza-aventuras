@@ -21,7 +21,7 @@ h2, h3 {
 /* --- CONTENEDOR EN REJILLA PARA TARJETAS --- */
 .conjuntos-container, 
 .extras-container,
-.juegos-container {
+.cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
